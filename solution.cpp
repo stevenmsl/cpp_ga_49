@@ -30,11 +30,16 @@ vector<vector<string>> Solution::groupAnagrams(vector<string> &strs)
        alter the original string
      */
     auto c = strs[i];
-    /* so that anagrams will have an identical key */
+    /* so that anagrams will have an identical key
+       - time complexity O(nlogn)
+    */
     sort(c.begin(), c.end());
     indxs[c].push_back(i);
   }
 
+  /* time complexity O(n)
+     - need to visit each word
+  */
   for (auto &[_, val] : indxs)
   {
     result.push_back({});

@@ -29,12 +29,12 @@ vector<vector<string>> Solution::groupAnagrams(vector<string> &strs)
     /* need to make a copy as you don't want to
        alter the original string
      */
-    auto c = strs[i];
+    auto key = strs[i];
     /* so that anagrams will have an identical key
        - time complexity O(nlogn)
     */
-    sort(c.begin(), c.end());
-    indxs[c].push_back(i);
+    sort(key.begin(), key.end());
+    indxs[key].push_back(i);
   }
 
   /* time complexity O(n)
